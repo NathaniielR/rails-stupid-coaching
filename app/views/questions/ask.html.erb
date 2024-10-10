@@ -1,0 +1,15 @@
+<h1>Your Coach's Response</h1>
+
+<%= form_with url: answer_path, method: :get, local: true do |form| %>
+  <div>
+    <%= form.label :question, "Your question:" %>
+    <%= form.text_field :question %>
+  </div>
+  <div>
+    <%= form.submit "Ask the coach!" %>
+  </div>
+<% end %>
+
+<% if @answer.present? %>
+  <p>Coach's answer: <%= @answer %></p>
+<% end %>
